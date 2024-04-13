@@ -22,7 +22,7 @@ Welcome to our GitHub repository! Here you'll find a collection of creative and 
 
 - [YouTube] In progress...
 - [Twitter] In progress...
-- [Tiktok]([https://www.facebook.com/your_facebook_page](https://www.tiktok.com/@devhorizon))
+- [Tiktok](https://www.tiktok.com/@devhorizon)
 - [Instagram](https://www.instagram.com/devhorizonof/)
 
 Join us and explore our collection of projects! If you have any questions, suggestions, or want to collaborate with us, feel free to reach out. We're here to help and grow together on the software development journey.
@@ -49,7 +49,7 @@ Bem-vindo ao nosso repositório GitHub! Aqui você encontrará uma coleção de 
 
 - [YouTube] Em construção...
 - [Twitter] Em construção...
-- [Tiktok]([https://www.facebook.com/your_facebook_page](https://www.tiktok.com/@devhorizon))
+- [Tiktok](https://www.tiktok.com/@devhorizon)
 - [Instagram](https://www.instagram.com/devhorizonof/)
 
 Junte-se a nós e explore nossa coleção de projetos! Se você tiver alguma dúvida, sugestão ou quiser colaborar conosco, fique à vontade para entrar em contato. Estamos aqui para ajudar e crescer juntos na jornada de desenvolvimento de software.
