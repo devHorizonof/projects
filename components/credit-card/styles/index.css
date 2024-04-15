@@ -1,0 +1,142 @@
+.bg-model {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1000;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+  background-color: rgba(0, 0, 0, 0.459);
+}
+
+body {
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.full-body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.d-flex-col {
+  flex-direction: column;
+}
+
+
+.credit-card {
+  width: 450px;
+  height: 300px;
+
+  justify-content: space-around;
+
+  background-color: aqua;
+
+  border-radius: 16px;
+
+  background: linear-gradient(128deg, #0027ff, #0bbdff, #661ddf, #9709f7);
+  background-size: 800% 800%;
+
+  -webkit-animation: AnimationName 9s ease infinite;
+  -moz-animation: AnimationName 9s ease infinite;
+  animation: AnimationName 9s ease infinite;
+
+  padding: 10px 30px;
+
+}
+
+.number {
+  width: 100%;
+}
+
+.name-data {
+  width: 100%;
+
+  justify-content: space-around;
+
+}
+
+input[type="text"]::placeholder {
+  font-size: 20px;
+  color: aliceblue;
+  font-weight: 500;
+}
+
+.input-mask {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  border: none;
+
+  font-size: 20px;
+  color: aliceblue;
+  font-weight: 500;
+
+ 
+  background: transparent;
+
+  letter-spacing: 4px;
+}
+
+.input-number {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  border-bottom: 0.01px solid azure ;
+}
+
+.input-name {
+  width: 50%;
+  font-size: 16px;
+}
+
+.input-date {
+  width: 20%;
+}
+
+.logo-card {
+  width: 100%;
+
+  text-align: end;
+}
+
+
+.chip {
+  width: 100%;
+
+  text-align: start;
+}
+
+/* Gradient 
+ ### Full code in github @devHorizonof ###
+ ### Código completo no github @devHorizonof ###
+*/
+@-webkit-keyframes AnimationName {
+  0%{background-position:36% 0%}
+  50%{background-position:65% 100%}
+  100%{background-position:36% 0%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:36% 0%}
+  50%{background-position:65% 100%}
+  100%{background-position:36% 0%}
+}
+@keyframes AnimationName {
+  0%{background-position:36% 0%}
+  50%{background-position:65% 100%}
+  100%{background-position:36% 0%}
+}
