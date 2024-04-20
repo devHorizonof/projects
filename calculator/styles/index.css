@@ -1,0 +1,129 @@
+.bg-model {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1000;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+  background-color: rgba(0, 0, 0, 0.459);
+}
+
+.d-flex-custom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+.calculator {
+  width: 375px;
+  height: 812px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+
+  background-color: rgba(255, 255, 255, 0.562);
+
+  border-radius: 16px;
+
+  padding: 16px;
+}
+
+
+.calculator button {
+  width: 62px;
+  height: 62px;
+
+  margin: 10px;
+
+  font-size: 32px;
+  color: rgba(0, 0, 0, 0.733);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+.bot {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sup {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.right .column {
+  display: flex;
+  flex-direction: column;
+}
+
+button.btn-h {
+  height: 104px;
+}
+
+button.btn-zero {
+  width: 144px;
+}
+
+.line {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.display {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: end;
+  justify-content: end;
+
+
+  border-radius: 16px 16px 0px 0px;
+
+  padding: 20px;
+}
+
+.display input {
+  outline: none;
+  border: none;
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  resize: none; /* Remove o redimensionamento */
+  border: none; /* Remove a borda */
+  outline: none; /* Remove o contorno ao focar */
+  padding: 0; /* Remove o preenchimento interno */
+  margin: 0; /* Remove as margens */
+
+  overflow: auto;
+
+  text-align: end;
+
+}
+
+.display .new-account {
+  width: 100%;
+  height: 80px;
+  font-size: 42px;
+
+}
