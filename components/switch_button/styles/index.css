@@ -19,6 +19,10 @@ label {
   cursor: pointer;
 }
 
+/*
+ ### Full code in github @devHorizonof ###
+ ### Código completo no github @devHorizonof ###
+*/
 label:after {
   content: "";
   width: 150px;
@@ -28,7 +32,9 @@ label:after {
   left: 14px;
   background-image: url('../assets/sun.svg');
   background-size: cover;
-  filter: invert(94%) sepia(10%) saturate(5070%) hue-rotate(355deg) brightness(101%) contrast(95%);
+  /* SVG Color */
+  filter: invert(94%) sepia(10%) saturate(5070%) 
+  hue-rotate(355deg) brightness(101%) contrast(95%);
   border-radius: 180px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
