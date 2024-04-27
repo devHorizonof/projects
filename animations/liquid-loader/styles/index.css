@@ -1,0 +1,90 @@
+.container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  &::before {
+    content: "";
+    position: absolute;
+    background: -moz-linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#833ab4", endColorstr="#fcb045", GradientType=1);
+    width: 1000px;
+    height: 700px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  overflow: hidden;
+}
+
+.spliner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  background: rgb(255, 255, 255);
+  filter: blur(5px) contrast(10);
+  mix-blend-mode: screen;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: #8b4b4b;
+}
+
+.circle:nth-child(odd) {
+  animation: spinLeft 2.5s 0.2s linear both infinite;
+}
+
+.circle:nth-child(even) {
+  animation: spinRight 1s 0.4s linear both infinite;
+}
+
+.circle:nth-child(2n) {
+  animation: pulse 2s ease-in-out 0.1s infinite;
+}
+
+.circle:nth-child(4n) {
+  animation-direction: reverse;
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.8)
+  }
+
+  70% {
+    transform: scale(0.6)
+  }
+}
+
+@keyframes spinLeft {
+  from {
+    transform: rotate(0deg) translate(50px);
+  }
+
+  to {
+    transform: rotate(360deg) translate(50px);
+  }
+}
+
+@keyframes spinRight {
+  from {
+    transform: rotate(360deg) translate(50px);
+  }
+
+  to {
+    transform: rotate(0deg) translate(50px);
+  }
+}
+
+
+/* Creditos */
+/* https://codepen.io/learningcreature/pen/gObvzmL */
