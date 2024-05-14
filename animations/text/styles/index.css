@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  height: 100%;
+}
+
+.bg-model {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1000;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+  background-color: rgba(0, 0, 0, 0.459);
+}
+
+
+svg {
+	font-family: "Roboto", sans-serif;
+	width: 600px; height: 600px;
+
+}
+svg text {
+	animation: stroke 5s infinite alternate;
+	stroke-width: 2;
+	stroke: #6D07A0;
+	font-size: 100px;
+}
+@keyframes stroke {
+	0%   {
+		fill: rgba(70,3,204,0); stroke: rgba(109,7,160,1);
+		stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
+	}
+	70%  {fill: rgba(70,3,204,0); stroke: rgba(109,7,160,1); }
+	80%  {fill: rgba(70,3,204,0); stroke: rgba(109,7,160,1); stroke-width: 3; }
+	100% {
+		fill: rgba(70,3,204,1); stroke: rgba(109,7,160,0);
+		stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
+	}
+}
+
+.wrapper {
+  background-color: #ffffffe1;
+  border-radius: 16px
+
+};
+
