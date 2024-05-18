@@ -1,0 +1,104 @@
+.bg-model {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1000;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+  background-color: rgba(0, 0, 0, 0.459);
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  height: 100%;
+}
+
+.container-btn {
+  background-color: rgb(178, 7, 230);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 15px 10px 10px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 10px;
+  box-shadow: rgba(198, 11, 255, 0.2) 0px 8px 24px;
+  color: rgb(255, 255, 255);
+}
+
+#favorite {
+  display: none;
+}
+
+#favorite:checked + .container-btn svg {
+  fill: hsl(0deg 100% 50%);
+  stroke: hsl(0deg 100% 50%);
+  animation: heartButton 1s;
+}
+
+@keyframes heartButton {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(1.3);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  75% {
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+#favorite + .container-btn .action {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+}
+
+#favorite + .container-btn .action span {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  transition: all 0.5s;
+}
+
+#favorite + .container-btn .action span.option-1 {
+  transform: translate(0px, 0%);
+  opacity: 1;
+}
+
+#favorite:checked + .container-btn .action span.option-1 {
+  transform: translate(0px, -100%);
+  opacity: 0;
+}
+
+#favorite + .container-btn .action span.option-2 {
+  transform: translate(0px, 100%);
+  opacity: 0;
+}
+
+#favorite:checked + .container-btn .action span.option-2 {
+  transform: translate(0px, 0%);
+  opacity: 1;
+}
+
