@@ -1,0 +1,23 @@
+{
+  "name": "web_scraping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "compilerOptions": {
+    "module": "ESNext"
+  },
+  "scripts": {
+    "start": "cd src/aliexpress && electron main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "@types/node": "^20.12.10",
+    "electron": "^30.0.2"
+  },
+  "dependencies": {
+    "csv-writer": "^1.6.0"
+  }
+}
