@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color card</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="palette">
+        <div class="color"><span>264653</span></div>
+        <div class="color"><span>2A9D8F</span></div>
+        <div class="color"><span>E9C46A</span></div>
+        <div class="color"><span>F4A261</span></div>
+        <div class="color"><span>E76F51</span></div>
+      </div>
+
+      <div class="notification" id="notification">Copied</div>
+
+      <div id="stats">
+        <span>Pressione a tecla espaço</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 18 18"
+        >
+          <path
+            d="M4 7.5c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5S5.5 9.83 5.5 9 4.83 7.5 4 7.5zm10 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5zm-5 0c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5S9.83 7.5 9 7.5z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+
+    <input type="text" id="inp" onchange="inputBackground(value)" value="">
+
+    <script>
+      // Funções de cor
+      function hexToRgb(hex) {
+        const bigint = parseInt(hex.slice(1), 16);
+        const r = (bigint >> 16) & 255;
+        const g = (bigint >> 8) & 255;
+        const b = bigint & 255;
+        return [r, g, b];
+      }
+
+      function getLuminance(rgb) {
+        const [r, g, b] = rgb.map((channel) => {
+          const c = channel / 255;
+          return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+        });
+        return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+      }
+
+      function getContrastRatio(color1, color2) {
+        const luminance1 = getLuminance(hexToRgb(color1));
+        const luminance2 = getLuminance(hexToRgb(color2));
+        const brightest = Math.max(luminance1, luminance2);
+        const darkest = Math.min(luminance1, luminance2);
+        return (brightest + 0.05) / (darkest + 0.05);
+      }
+
+      function getRandomColor() {
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+
+      function getContrastingColor(color) {
+        let contrastingColor;
+        do {
+          contrastingColor = getRandomColor();
+        } while (getContrastRatio(color, contrastingColor) < 4.5);
+        return contrastingColor;
+      }
+
+      // Aplicar cores às divs
+      function updateColors() {
+        document.querySelectorAll(".color").forEach((div) => {
+          const randomColor = getRandomColor();
+          const contrastingColor = getContrastingColor(randomColor);
+          div.style.backgroundColor = randomColor;
+          div.style.color = contrastingColor;
+          div.querySelector("span").textContent = randomColor
+            .slice(1)
+            .toUpperCase();
+        });
+      }
+
+      // Adicionar um ouvinte de eventos para a tecla "espaço"
+      document.addEventListener("keydown", function (event) {
+        if (event.code === "Space") {
+          updateColors();
+        }
+      });
+
+      function copyToClipboard(text) {
+        const tempInput = document.createElement("input");
+        tempInput.value = `#${text}`;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand("copy");
+        document.body.removeChild(tempInput);
+      }
+
+      function showNotification(message, x, y) {
+        const notification = document.getElementById("notification");
+        notification.textContent = message;
+        notification.style.left = `${x}px`;
+        notification.style.top = `${y}px`;
+        notification.style.display = "block";
+        setTimeout(() => {
+          notification.style.display = "none";
+        }, 2000);
+      }
+
+      // Adicionar ouvintes de clique a todas as divs
+      document.querySelectorAll(".color").forEach((div) => {
+        div.addEventListener("click", (event) => {
+          const colorCode = div.querySelector("span").textContent;
+          copyToClipboard(colorCode);
+          showNotification(
+            "Copiado: #" + colorCode,
+            event.clientX,
+            event.clientY
+          );
+        });
+      });
+
+      function inputBackground(color) {
+        const input = document.getElementById('inp')
+
+        input.style.backgroundColor = color
+      }
+    </script>
+  </body>
+</html>
